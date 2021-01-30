@@ -139,3 +139,35 @@ L.polygon([
   fillOpacity: 0.75
 }).addTo(myMap);
 
+//// ADDING the data to the map features
+d3.csv("/CombinedDataset.csv").then(function(data){
+  //console.log(data[0]);
+
+});
+
+var SummarybyRegion = d3.nest()
+  .key(function(d) { return d.region; })
+  .entries(data);
+
+  //console.log(data);
+
+//summarize the data (i.e. do the averaging)
+
+var SummaryAverage = d3.nest()
+  .key(function(d) {return d.region;})
+  .rollup(function(v) {return {
+    count: v.length,
+    avgbeer: d3.mean(v,function(d) {return d.beer_servings}),
+    avgspirits: d3.mean(v,function(d) {return d.spirit_servings}),
+    avgwine: d3.mean(v,function(d) {return d.wine_servings}),
+    avghappiness: d3.mean(v,function(d) {return d.happinessscore}),
+    avggdp: d3.mean(v,function(d) {return d.gdp_percapita})
+  }; })
+    .entries(data);
+console.log(JSON.stringify(SummaryAverage));
+
+
+
+
+
+
