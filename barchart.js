@@ -1,4 +1,3 @@
-var ctx = document.getElementById('myChart');
 function makeChart(drinks) {
   
     var countryLabels = drinks.map(function(d) {
@@ -9,7 +8,7 @@ function makeChart(drinks) {
     });
   
     var chart = new Chart('chart', {
-      type: "verticalBar",
+      type: "bar",
       options: {
         maintainAspectRatio: false,
         legend: {
