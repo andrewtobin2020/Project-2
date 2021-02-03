@@ -1,3 +1,4 @@
+var ctx = 'myChart';
 function makeChart(drinks) {
   
     var countryLabels = drinks.map(function(d) {
@@ -6,8 +7,12 @@ function makeChart(drinks) {
     var drinkData = drinks.map(function(d) {
       return +d.beer_servings;
     });
+
+    var drinkColors = drinks.map(function(d) {
+        return d.beer_servings > 150 ? '#36a2eb' : '#cc65fe';
+    });
   
-    var chart = new Chart('chart', {
+    var chart = new Chart(ctx, {
       type: "bar",
       options: {
         maintainAspectRatio: false,
@@ -19,7 +24,8 @@ function makeChart(drinks) {
         labels: countryLabels,
         datasets: [
           {
-            data: drinkData
+            data: drinkData,
+            backgroundColor: drinkColors
           }
         ]
       }
