@@ -15,32 +15,32 @@ app = Flask(__name__)
 # Main route 
 @app.route("/")
 def welcome(): 
-    return render_template("index.html")
+    return render_template("template/index.html")
 
 # Beer Bar Chart route 
 @app.route("/BeerBarChart")
 def BarChart():
-    return render_template("beerchart.html") 
+    return render_template("template/beerchart.html") 
 
 # Wine Bar Chart route 
 @app.route("/WineBarChart")
 def BarChart():
-    return render_template("winechart.html") 
+    return render_template("template/winechart.html") 
 
 # Spirits Bar Chart route 
 @app.route("/SpiritsBarChart")
 def BarChart():
-    return render_template("spiritschart.html") 
+    return render_template("template/spiritschart.html") 
 
 # Scatter Plots route 
 @app.route("/ScatterPlots")
 def BarChart():
-    return render_template("alcoholplot.html") 
+    return render_template("template/alcoholplot.html") 
 
 # Mapbox route 
 @app.route("/Mapbox")
 def BarChart():
-    return render_template("map.html") 
+    return render_template("template/map.html") 
 
 
 if __name__ == "__main__":
