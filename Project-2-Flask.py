@@ -1,59 +1,47 @@
 # Imports
-import numpy as np
-import pandas as pd
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from flask import Flask, jsonify
+from flask import render_template
 
-from flask import Flask, jsonify 
-
-# Database setup
-engine = create_engine("postgresql://postgres:Gamecock2020!@localhost:5432/<DB>")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-Passenger = Base.classes.passenger # Example
 
 # Flask setup 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 
 ##############
 # Flask routes
 ##############
 
-# Main route
+# Main route 
 @app.route("/")
-def welcome():
-    # List all routes
-    return (
-        "Welcome to our project!<br/>"
-        f"Available Routes:<br/>"
-        f"/api/v1.0/BarChart<br/>"
-        f"/api/v1.0/ScatterPlot<br/>"
-        f"/api/v1.0/HeatMap<br/>"
-    )
+def welcome(): 
+    return render_template("index.html")
 
-# BarChart route
-@app.route("/api/v1.0/BarChart")
+# Beer Bar Chart route 
+@app.route("/BeerBarChart")
 def BarChart():
-    return ""
+    return render_template("beerchart.html") 
 
-# ScatterPlot route
-@app.route("/api/v1.0/ScatterPlot")
-def ScatterPlot():
-    return ""
+# Wine Bar Chart route 
+@app.route("/WineBarChart")
+def BarChart():
+    return render_template("winechart.html") 
 
-# HeatMap route
-@app.route("/api/v1.0/HeatMap")
-def HeatMap():
-    return "" 
-    
-    
-    
+# Spirits Bar Chart route 
+@app.route("/SpiritsBarChart")
+def BarChart():
+    return render_template("spiritschart.html") 
+
+# Scatter Plots route 
+@app.route("/ScatterPlots")
+def BarChart():
+    return render_template("alcoholplot.html") 
+
+# Mapbox route 
+@app.route("/Mapbox")
+def BarChart():
+    return render_template("map.html") 
+
+
+if __name__ == "__main__":
+  app.run(debug=True) 
