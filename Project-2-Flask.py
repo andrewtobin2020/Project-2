@@ -24,22 +24,22 @@ def BarChart():
 
 # Wine Bar Chart route 
 @app.route("/WineBarChart")
-def BarChart():
+def WineChart():
     return render_template("template/winechart.html") 
 
 # Spirits Bar Chart route 
 @app.route("/SpiritsBarChart")
-def BarChart():
+def SpiritsChart():
     return render_template("template/spiritschart.html") 
 
 # Scatter Plots route 
 @app.route("/ScatterPlots")
-def BarChart():
+def ScatterChart():
     return render_template("template/alcoholplot.html") 
 
 # Mapbox route 
 @app.route("/Mapbox")
-def BarChart():
+def Mapbox():
     return render_template("template/map.html") 
 
 
