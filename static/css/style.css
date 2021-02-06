@@ -20,7 +20,7 @@ html {
   width: 400px;
   height: 400px;
   content: " ";
-  background-image: url("static/css/spirits_2.jpg");
+  background-image: url("spirits_2.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -36,7 +36,7 @@ html {
   width: 400px;
   height: 400px;
   content: " ";
-  background-image: url("static/css/splash_beer.jpg");
+  background-image: url("splash_beer.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -52,7 +52,7 @@ html {
   width: 400px;
   height: 400px;
   content: " ";
-  background-image: url("static/css/wine_glasses.jpg");
+  background-image: url("wine_glasses.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -68,7 +68,7 @@ html {
   width: 400px;
   height: 400px;
   content: " ";
-  background-image: url("static/css/money_shot.jpg");
+  background-image: url("money_shot.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
